@@ -2,6 +2,9 @@
   <h3><%= @job.title %></h3>
   <div class="group">
       <%= link_to("Edit", edit_job_path, class: "btn btn-primary pull-right") %>
+      <% if current_user %>
+      <%= link_to("提交简历", new_job_resume_path(@job), class: "btn btn-default pull-right") %>
+      <% end %>
   </div><br><br>
   <p><%= @job.description %></p>
 </div>
